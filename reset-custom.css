@@ -13,18 +13,40 @@
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
 
-  --fs-900: 9.375rem;
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
-  --fs-600: 2rem;
+  /* font-sizes */
+  --fs-900: clamp(5rem, 8vw + 1, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1rem;
   --fs-500: 1.75rem;
-  --fs-400: 1.125rem;
+  --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
+  /* font-families */
   --ff-serif: 'Bellefair', serif;
   --ff-sans-cond: 'Barlow Condensed', sans-serif;
   --ff-sans-normal: 'Barlow', sans-serif;
+}
+
+@media (min-width: 35em) {
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media (min-width: 45em) {
+  :root {
+    /* font-sizes */
+
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-400: 1.125rem;
+  }
 }
 
 /* Box sizing rules */
@@ -53,7 +75,7 @@ html:focus-within {
 
 html,
 body {
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 /* Set core body defaults */
@@ -64,6 +86,9 @@ body {
   background-color: hsl(var(--clr-dark));
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 /* A elements that don't have a class get default styles */
