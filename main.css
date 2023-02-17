@@ -86,7 +86,7 @@ body {
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-dark));
   line-height: 1.5;
-  min-height: 100vh;
+  min-height: 100svh;
 
   display: grid;
   grid-template-rows: min-content 1fr;
